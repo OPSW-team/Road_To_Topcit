@@ -1,0 +1,47 @@
+properties:
+  story:
+    world:
+      count: 7 # 월드 개수
+      stage:
+        count: 3
+        problem:
+          count: 5
+    life-max: 3
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: learn-tc
+  datasource:
+    url: jdbc:mysql://localhost:3306/road_to_topcit?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+
+app:
+  constants:
+    question-types: [MCQ, SHORT]
+    difficulty-levels: [Easy, Normal, Hard, Expert]
+    topcit-categories: [소프트웨어공학, 데이터베이스, 네트워크, 보안, 인공지능, 비즈니스]
